@@ -1,1 +1,1 @@
-2020-11-01-17:10|ERROR |logs.py:33 |abc
+2020-11-07-09:43|INFO  |test_member.py:26 |{'errcode': 0, 'errmsg': 'ok', 'access_token': 'LAeDtcmjUqmJ2AQib659VjmN8bk4ECzvORTccfMcTBS3MVMVbR0tYcUpPXHZT78H841RPVXFiPMFSXGofKm4yPFeoJue8dUGDIyTBTYpaTtw8p1tVGIxE3qcx6a1HGe55W3dqYdHV36ACayP1b149ekqS6VUtrUslC1DmDzVJayiwtiST6k3VF_ynu_EGkVy3BQMw-MvxwtETbnnjHYvCg', 'expires_in': 7200}

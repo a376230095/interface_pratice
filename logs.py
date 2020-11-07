@@ -24,10 +24,11 @@ stream.setLevel(logging.DEBUG)
 stream.setFormatter(format)
 
 # 把这个流处理器放入到生成器中
-logger.addHandler(stream)
+# logger.addHandler(stream)
 
 file.setLevel(logging.DEBUG)
 file.setFormatter(format)
+# 把文件处理器加入到生成器中
 logger.addHandler(file)
 
 logger.error("abc")
