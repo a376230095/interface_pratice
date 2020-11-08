@@ -1,8 +1,10 @@
 import logging
+import os
 
 
 class Logs():
     # 定义一个生成器
+    base_path=os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
     def __init__(self):
         self.logger=logging.getLogger("通通")
         self.logger.setLevel(logging.DEBUG)
@@ -17,7 +19,8 @@ class Logs():
 
     # 定义文件处理器
     def set_file_handle(self):
-        self.file_handle=logging.FileHandler(filename="log.log",mode="w")
+        log_file_path=os.path.join(self.base_path,"log/log.log")
+        self.file_handle=logging.FileHandler(filename=log_file_path, mode="w")
         self.file_handle.setFormatter(self.formatter)
         self.file_handle.setLevel(logging.DEBUG)
         self.logger.addHandler(self.file_handle)

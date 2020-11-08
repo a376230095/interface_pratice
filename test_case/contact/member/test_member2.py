@@ -1,5 +1,5 @@
 import requests
-from get_log import Logs
+from common.get_log import Logs
 
 class TestMember():
     log = Logs().get_logger()
