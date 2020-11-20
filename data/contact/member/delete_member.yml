@@ -1,0 +1,9 @@
+# data = {
+#            "userid": "zhangsan",
+#            "name": "张三",
+#            "mobile": "+86 13800000000",
+#            "department": [1, 2],
+#        }
+method: post
+url: https://qyapi.weixin.qq.com/cgi-bin/user/delete
+params: access_token=${token}&userid=${userid}

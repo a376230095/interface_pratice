@@ -1,4 +1,5 @@
 import os
+from string import Template
 
 import requests
 import yaml
@@ -40,10 +41,32 @@ class BaseApi():
             yaml_data=yaml.safe_load(f)
         return yaml_data
 
+    # 封装模板技术，改变yml文件的参数（变量）
+    def template(self,file,p_data:dict):
+        # 让file变成一个相对路径，引用绝对路径来实现这个功能
+        yaml_file=os.path.join(self.base_path,file)
+        with open(yaml_file) as f:
+            # 通过模板技术获取改变后的值
+            request_data=Template(f.read()).substitute(p_data)
+            # 把模板技术改变的值从字符串变成字典
+            request_data=yaml.safe_load(request_data)
+        return request_data
+
 
 
 if __name__ == "__main__":
-    a=BaseApi()
+    pass
+    # a=BaseApi()
     # print(a.get_token(a.contact_secret))
-    data=a.load_yaml("data/contact/member/add_member.yml")
-    print(data,type(data))
+    # data=a.load_yaml("data/contact/member/add_member.yml")
+    # print(data,type(data))
+    # p_data = {
+    #     # key就是${变量} 这个变量名,value就是我们要替换成为的值
+    #     "token": 456,
+    #     "userid": "tong",
+    #     "name": "tong",
+    #     "mobile": "131726116565",
+    #     "department": [1, 2]
+    # }
+    # request_data=a.template("data/contact/member/add_member_demo.yml",p_data)
+    # print(request_data)
